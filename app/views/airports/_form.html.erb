@@ -2,7 +2,6 @@
   <% if airport.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(airport.errors.count, "error") %> prohibited this airport from being saved:</h2>
-
       <ul>
       <% airport.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,8 +9,8 @@
       </ul>
     </div>
   <% end %>
-
   <div class="actions">
-    <%= form.submit %>
+    Airport Code: <%= form.text_field :city_code %>
+    <%= form.submit "Submit" %>
   </div>
 <% end %>
