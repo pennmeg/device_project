@@ -4,26 +4,23 @@
     <title>DeviceProject</title>
     <%= csrf_meta_tags %>
     <p class="notice"><%= notice %></p>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <!-- not logged in  -->
     <% if !current_user %>
-  <%= link_to "Sign up", new_user_registration_path %>
-  <%= link_to "Sign in", new_user_session_path %>
-<% else %>
-<%= link_to "All Users", users_path %>
-<%= link_to 'All Airports', airports_path %>
-
-
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+      <%= link_to "Sign up", new_user_registration_path %>
+      <%= link_to "Sign in", new_user_session_path %>
+  <% else %>
+    <%= link_to "All Users", users_path %>
+    <%= link_to 'All Airports', airports_path %>
+    <%= link_to "All Airplanes", airplanes_path %>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
     <%= current_user.email %>
-<% end %>
+  <% end %>
     <%= yield %>
   </body>
 </html>

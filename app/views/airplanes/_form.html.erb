@@ -2,7 +2,6 @@
   <% if airplane.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(airplane.errors.count, "error") %> prohibited this airplane from being saved:</h2>
-
       <ul>
       <% airplane.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,8 +9,12 @@
       </ul>
     </div>
   <% end %>
-
   <div class="actions">
-    <%= form.submit %>
+    Plane Name: <%= form.text_field :plane_name %>
+    Plane Capacity: <%= form.number_field :capacity %>
+    Belongs to Photo <%= form.text_field :photo_id %>
+    Belongs to Airport <%= form.text_field :airport_id %>
+    <%= form.hidden_field :user_id, value: current_user[:id] %>
+    <%= form.submit "Submit" %>
   </div>
 <% end %>
