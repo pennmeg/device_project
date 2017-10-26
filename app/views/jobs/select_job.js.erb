@@ -1,0 +1,15 @@
+
+<!-- // ======= check selectors ======= -->
+console.log("selected job div: ", $('#job-<%= params[:id] %>').attr('id'))      // job banner div
+console.log("job buttons div: ", $('#orig-dest-<%= params[:id] %>').attr('id')) // job buttons container
+var jobCount = '<%= @jobs.length %>'                                            // count number of jobs
+console.log("jobCount: ", jobCount);
+// ======= re-set all job banners =======
+for (var i = 1; i < jobCount + 1; i++) {
+    $('#job-' + i).css('background-color', 'lavender');     	// change to normal bg-color
+    $('#orig-dest-' + i).css('visibility', 'hidden')        	// hide buttons
+}
+
+// ======= hilite selected job =======
+$('#job-<%= params[:id] %>').css('background-color', 'thistle')     // change to hilite bg-color
+$('#orig-dest-<%= params[:id] %>').css('visibility', 'visible')     // show buttons

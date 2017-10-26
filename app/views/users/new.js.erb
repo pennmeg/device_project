@@ -1,0 +1,11 @@
+<tr>
+  <td><%= link_to 'add', new_port_path, remote: true %></td>
+</tr>
+
+$('#port-form').html("<%= j (render 'form') %>");
+$('#port-form').slideDown(350);
+$('#port-form').css('display', 'block');
+$("#cancel-port").on("click", function() {
+	    console.log("== cancel-port ==");
+	    $('#port-form').slideUp(350);
+	});

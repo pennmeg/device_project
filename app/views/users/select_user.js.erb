@@ -1,0 +1,15 @@
+
+<!-- // ======= check selectors ======= -->
+console.log("selected user div: ", $('#user-<%= params[:id] %>').attr('id'))      // job banner div
+console.log("userbuttons div: ", $('#orig-dest-<%= params[:id] %>').attr('id')) // job buttons container
+var userCount = '<%= @users.length %>'                                            // count number of jobs
+console.log("userCount: ", userCount);
+// ======= re-set all job banners =======
+for (var i = 1; i < userCount + 1; i++) {
+    $('#s_u-' + i).css('background-color', 'lavender');     	// change to normal bg-color
+    $('#orig-dest-' + i).css('visibility', 'hidden')        	// hide buttons
+}
+
+// ======= hilite selected job =======
+$('#user-<%= params[:id] %>').css('background-color', 'thistle')     // change to hilite bg-color
+$('#orig-dest-<%= params[:id] %>').css('visibility', 'visible')     // show buttons

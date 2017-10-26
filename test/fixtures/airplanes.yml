@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  airport: one
+  photo: one
+  plane_name: MyString
+  capacity: 9.99
+
+two:
+  user: two
+  airport: two
+  photo: two
+  plane_name: MyString
+  capacity: 9.99

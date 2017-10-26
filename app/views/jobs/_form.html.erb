@@ -1,0 +1,31 @@
+<%= form_with(model: job, local: true) do |form| %>
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+
+    <%= form_for @port, remote: true do |f| %>
+    <div class="port-data">
+        <div class="data">
+            <div class="data-label"><%= label(:name, "port") %></div>
+            <div class="data-value"><%= f.text_field :name %></div>
+        </div>
+        <div class="data">
+            <%= f.submit 'save', :class => 'button_1' %>
+            <input type="button" id="cancel-port" class="button_1" value="cancel">
+        </div>
+    </div>
+<% end %>
+
+    <%= form.submit %>
+  </div>
+<% end %>
