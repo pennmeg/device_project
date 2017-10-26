@@ -14,17 +14,19 @@
   <body>
     <!-- not logged in  -->
     <% if !current_user %>
-  <%= link_to "Sign up", new_user_registration_path %>
-  <%= link_to "Sign in", new_user_session_path %>
-<% else %>
-<%= link_to "All Users", users_path %>
-<%= link_to 'Photos', photos_path %>
-<%= link_to 'Upload Your Photo', new_photo_path %>
+      <%= link_to "Sign up", new_user_registration_path %>
+      <%= link_to "Sign in", new_user_session_path %>
+    <% else %>
+    <%= link_to "All Users", users_path %>
+    <%= link_to 'Photos', airports_path %>
+    <%= link_to 'Upload Your Photo', new_job_path %>
 
 
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
     <%= current_user.email %>
-<% end %>
+  <% end %>
+  <%= link_to 'Make Order', new_job_path %>
+
     <%= yield %>
   </body>
 </html>

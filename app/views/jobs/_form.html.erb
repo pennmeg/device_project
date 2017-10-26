@@ -11,21 +11,39 @@
     </div>
   <% end %>
 
-  <div class="actions">
 
-    <%= form_for @port, remote: true do |f| %>
-    <div class="port-data">
+  <div id="client_form">
+
+    <div class="client-data">
         <div class="data">
-            <div class="data-label"><%= label(:name, "port") %></div>
-            <div class="data-value"><%= f.text_field :name %></div>
+            <div class="data-label"><%= label(:client_name, "Make Your Order") %></div>
+            <p>Your Full Name:</p> <div class="data-value"><%= form.text_field :client_name %></div>
+            <p>Email:</p> <div class="data-value"><%= form.email_field :client_email %></div>
+            <p>Description:</p> <div class="data-value"><%= form.text_field :description %></div>
+            <p>Origin:</p> <div class="data-value"><%= form.text_field :origin_id %></div>
+            <p>Destination:</p> <div class="data-value"><%= form.text_field :destination_id %></div>
+            <p>Weight:</p> <div class="data-value"><%= form.text_field :weight %></div>
+
         </div>
         <div class="data">
-            <%= f.submit 'save', :class => 'button_1' %>
-            <input type="button" id="cancel-port" class="button_1" value="cancel">
+            <input type="button" id="cancel-client" class="button_1" value="cancel">
         </div>
     </div>
-<% end %>
 
     <%= form.submit %>
   </div>
+
 <% end %>
+
+
+<!--
+t.string "client_name"
+t.string "client_email"
+t.string "description"
+t.bigint "origin_id"
+t.bigint "destination_id"
+t.decimal "weight"
+t.decimal "cost"
+t.datetime "start_time"
+t.datetime "end_time"
+-->

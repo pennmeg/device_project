@@ -10,7 +10,9 @@ class RegistrationsController < Devise::RegistrationsController
 
     def account_update_params
       puts "******* account_update_params *******"
+      puts "params: #{params.inspect}"
       params.require(:user).permit(:firstname, :lastname, :username, :email, :password,
-      :password_confirmation, :current_password)
+      :password_confirmation)
+
   end
 end
