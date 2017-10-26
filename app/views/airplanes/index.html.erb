@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Airplanes</h1>
-<%= link_to 'Upload a Airplane Photo', new_photo_path %> |
-<%= link_to 'Create a New Airplane', new_airplane_path %>
+Step 1: <%= link_to 'Upload a Airplane Photo', new_photo_path %> |
+Step 2: <%= link_to 'Add Airplane to Database', new_airplane_path %>
 
 <% @airplanes.each do |airplane| %>
   <% photo = Photo.find(airplane[:photo_id]) %>
