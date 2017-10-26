@@ -2,7 +2,6 @@
   <% if job.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
-
       <ul>
       <% job.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,25 +11,27 @@
   <% end %>
 
 
-  <div id="client_form">
+<div id="client_form">
 
-    <div class="client-data">
-        <div class="data">
-            <div class="data-label"><%= label(:client_name, "Make Your Order") %></div>
-            <p>Your Full Name:</p> <div class="data-value"><%= form.text_field :client_name %></div>
-            <p>Email:</p> <div class="data-value"><%= form.email_field :client_email %></div>
-            <p>Description:</p> <div class="data-value"><%= form.text_field :description %></div>
-            <p>Origin:</p> <div class="data-value"><%= form.text_field :origin_id %></div>
-            <p>Destination:</p> <div class="data-value"><%= form.text_field :destination_id %></div>
-            <p>Weight:</p> <div class="data-value"><%= form.text_field :weight %></div>
+  <div class="client-data">
+      <div class="data">
+          <div class="data-label"><%= label(:client_name, "Make Your Order") %></div>
 
-        </div>
-        <div class="data">
-        </div>
-    </div>
+          <%= form.collection_select :origin_id, Airport.order(:city_code), :id, :city_code, include_blank: "Select Origin" %>
+          <%= form.collection_select :destination_id, Airport.order(:city_code), :id, :city_code, include_blank: "Select Destination" %>
 
-    <%= form.submit %>
+          <p>Your Full Name:</p> <div class="data-value"><%= form.text_field :client_name %></div>
+          <p>Email:</p> <div class="data-value"><%= form.email_field :client_email %></div>
+          <p>Description:</p> <div class="data-value"><%= form.text_field :description %></div>
+          <p>Weight:</p> <div class="data-value"><%= form.text_field :weight %></div>
+
+          <p>Cost:</p> <div class="data-value"><%= form.text_field :cost, value: "1" %></div>
+      </div>
+      <div class="data">
+      </div>
   </div>
+  <%= form.submit %>
+</div>
 
 <% end %>
 
