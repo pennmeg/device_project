@@ -1,6 +1,11 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
+
+
+  def check_status
+    @client = Client.new
+  end
   # GET /jobs
   # GET /jobs.json
   def index
@@ -35,7 +40,7 @@ end
   # POST /jobs
   # POST /jobs.json
   def create
-    @job = Job.new(job_params)
+    @job = Job.new
 
     respond_to do |format|
       if @job.save
