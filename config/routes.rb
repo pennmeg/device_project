@@ -5,18 +5,11 @@ Rails.application.routes.draw do
   get "/select_user/:id" => "users#select_user"
   # get "/new_boat_js" => "boats#new_boat_js"
   get "client_form" => "jobs#client_form"
-
-
-
+# resources and relationships
   devise_for :users
   resources :users, :only => [:index, :show]
-
   resources :airports
   resources :jobs
-
-  resources :airplanes do
-    resources :photos	# use this version if editing title, description, other db values
-  end
-
-
+  resources :airplanes
+  resources :photos	# use this version if editing title, description, other db values
 end
