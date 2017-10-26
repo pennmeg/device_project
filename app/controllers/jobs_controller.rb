@@ -19,6 +19,11 @@ class JobsController < ApplicationController
 
   # GET /jobs/new
   def new
+    @users = User.all
+    @jobs = Job.all
+    @airports = Airport.all
+    puts "@airports #{@airports.inspect}"
+    @airplanes = Airplane.all
     @job = Job.new
   end
 
@@ -27,26 +32,36 @@ class JobsController < ApplicationController
   end
 
 
-  # ======= new_boat_js =======
-def new_boat_js
-    puts "******* new_boat_js *******"
-    @users = User.all
-    @jobs = Job.all
-    @ports = Port.all
-    @boat = Boat.new
-end
+  # ======= new_airplane =======
+# def new_airplane
+#     puts "******* new_airplane *******"
+#     @users = User.all
+#     @jobs = Job.all
+#     @airports = Airport.all
+#     @airplanes = Airplane.new
+# end
 
 
   # POST /jobs
   # POST /jobs.json
   def create
-    @job = Job.new
+    puts "******* create *******"
+    puts "params: #{params.inspect}"
+    @job = Job.new(job_params)
 
     respond_to do |format|
       if @job.save
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
         format.json { render :show, status: :created, location: @job }
       else
+
+        @users = User.all
+        # @jobs = Job.all
+        @airports = Airport.all
+        puts "@airports #{@airports.inspect}"
+        @airplanes = Airplane.all
+        puts "@airplanes #{@airplanes.inspect}"
+
         format.html { render :new }
         format.json { render json: @job.errors, status: :unprocessable_entity }
       end
@@ -85,6 +100,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.fetch(:job, {})
+      # "origin_id"=>"1", "destination_id"=>"2", "client_name"=>"sd", "client_email"=>"sd@adgsdfg", "description"=>"sdgh", "weight"=>"1"}
+      params.require(:job).permit(:origin_id, :destination_id, :client_name, :client_email, :description, :weight, :cost, :start_time, :end_time)
     end
 end
