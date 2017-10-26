@@ -4,28 +4,32 @@ class AirportsController < ApplicationController
   # GET /airports
   # GET /airports.json
   def index
+    puts "*** airport index ***"
     @airports = Airport.all
   end
 
   # GET /airports/1
   # GET /airports/1.json
   def show
+    puts "*** airport show ***"
   end
 
   # GET /airports/new
   def new
+    puts "*** airport new ***"
     @airport = Airport.new
   end
 
   # GET /airports/1/edit
   def edit
+    puts "*** airport edit ***"
   end
 
   # POST /airports
   # POST /airports.json
   def create
+    puts "*** airport create ***"
     @airport = Airport.new(airport_params)
-
     respond_to do |format|
       if @airport.save
         format.html { redirect_to @airport, notice: 'Airport was successfully created.' }
@@ -54,6 +58,7 @@ class AirportsController < ApplicationController
   # DELETE /airports/1
   # DELETE /airports/1.json
   def destroy
+    puts "*** airport destroy ***"
     @airport.destroy
     respond_to do |format|
       format.html { redirect_to airports_url, notice: 'Airport was successfully destroyed.' }
@@ -69,6 +74,6 @@ class AirportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def airport_params
-      params.fetch(:airport, {})
+      params.require(:airport).permit(:city_code)
     end
 end
