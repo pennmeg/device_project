@@ -12,20 +12,24 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <p><%= job[:client_email] %></p>
-        <p>Origin:<%= job[:origin_id] %></p>
-        <p>Destination:<%= job[:destination_id] %></p>
-        <p>Order by:<%= job[:client_name] %></p>
-        <p>Email:<%= job[:client_email] %></p>
-        <p>Description:<%= job[:description] %></p>
-        <p>Weight:<%= job[:weight] %></p>
-        <p>Total Cost:<%= job[:cost] %></p>
-
+        <div class="jobsbox">
+          <p><%= job[:client_email] %>
+          <% airportStart = Airport.find(job[:origin_id]) %>
+          <% airportEnd = Airport.find(job[:destination_id]) %>
+          <p>Origin:<%= airportStart[:city_code] %></p>
+          <p>Destination:<%= airportEnd[:city_code]  %></p>
+          <p>Order by:</p><%= job[:client_name] %>
+          <p>Email:</p><%= job[:client_email] %>
+          <p>Description:</p><%= job[:description] %>
+          <p>Weight:</p><%= job[:weight] %>
+          <p>Total Cost:</p><%= job[:cost] %>
 
         <% if current_user %>
           <td><%= link_to 'Edit', edit_job_path(job) %></td>
           <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
+      </div>
+
       </tr>
     <% end %>
   </tbody>
