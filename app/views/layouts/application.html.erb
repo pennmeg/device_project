@@ -3,30 +3,37 @@
   <head>
     <title>DeviceProject</title>
     <%= csrf_meta_tags %>
-    <p class="notice"><%= notice %></p>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <!-- not logged in  -->
-    <% if !current_user %>
-      <%= link_to "Home", home_path %>
-      <%= link_to "Sign up", new_user_registration_path %>
-      <%= link_to "Sign in", new_user_session_path %>
-      <%= link_to 'Create New Order', new_job_path %>
-      <%= link_to 'Check Status', check_status_path %>
-    <% else %>
-      <%= link_to "Main Page", home_path %>
-      <%= link_to 'Create New Order', new_job_path %>
-      <%= link_to "All Orders", jobs_path %>
-      <%= link_to 'View/Create New Airport', airports_path %>
-      <%= link_to "View/Create New Airplane", airplanes_path %>
-      <%= link_to "All Employees", users_path %>
-      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-      Currently Signed In: <%= current_user.email %>
-    <% end %>
+    <ul>
+      <% if !current_user %>
+        <li><%= link_to "Home", home_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <li><%= link_to "Sign in", new_user_session_path %></li>
+        <li><%= link_to 'Create New Order', new_job_path %></li>
+        <li><%= link_to 'Check Status', check_status_path %></li>
+      <% else %>
+        <li><%= link_to "Main Page", home_path %></li>
+        <li><%= link_to 'Create New Order', new_job_path %></li>
+        <li><%= link_to "All Orders", jobs_path %></li>
+        <li><%= link_to 'View/Create New Airport', airports_path %></li>
+        <li><%= link_to "View/Create New Airplane", airplanes_path %></li>
+        <li><%= link_to "All Employees", users_path %></li>
+        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+        <div id="c_user_email">Currently Signed In: <%= current_user.email %></div>
 
-    <%= yield %>
+      <% end %>
+  </ul>
+  <p class="notice"><%= notice %></p>
+
+
+
+    <div class="section>">
+      <%= yield %>
+    </div>
   </body>
 </html>
