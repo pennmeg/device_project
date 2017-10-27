@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get "/home" => "users#home"
   get "/select_user/:id" => "users#select_user"
   # get "/new_boat_js" => "boats#new_boat_js"
-  get "client_form" => "jobs#client_form"
-
-
+  get "/check_status" => "jobs#check_status"
+  post "/check_status" => "jobs#check_status"
+  get "/search" => "jobs#index"
 
   devise_for :users
   resources :users, :only => [:index, :show]
@@ -17,6 +17,5 @@ Rails.application.routes.draw do
   resources :airplanes do
     resources :photos	# use this version if editing title, description, other db values
   end
-
 
 end
