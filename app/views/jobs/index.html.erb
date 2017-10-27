@@ -12,11 +12,20 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= job[:client_email] %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <p><%= job[:client_email] %></p>
+        <p>Origin:<%= job[:origin_id] %></p>
+        <p>Destination:<%= job[:destination_id] %></p>
+        <p>Order by:<%= job[:client_name] %></p>
+        <p>Email:<%= job[:client_email] %></p>
+        <p>Description:<%= job[:description] %></p>
+        <p>Weight:<%= job[:weight] %></p>
+        <p>Total Cost:<%= job[:cost] %></p>
 
+
+        <% if current_user %>
+          <td><%= link_to 'Edit', edit_job_path(job) %></td>
+          <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
