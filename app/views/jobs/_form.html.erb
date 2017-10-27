@@ -16,6 +16,7 @@
       <div class="data">
           <%= form.collection_select :origin_id, Airport.order(:city_code), :id, :city_code, include_blank: "Select Origin" %>
           <%= form.collection_select :destination_id, Airport.order(:city_code), :id, :city_code, include_blank: "Select Destination" %>
+          <%= form.collection_select :airplane_id, Airplane.order(:plane_name), :id, :plane_name, include_blank: "Select Plane" %><br>
           <p>Your Full Name:</p> <div class="data-value"><%= form.text_field :client_name %></div>
           <p>Email:</p> <div class="data-value"><%= form.email_field :client_email %></div>
           <p>Description:</p> <div class="data-value"><%= form.text_field :description %></div>
