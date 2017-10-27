@@ -14,6 +14,7 @@
 <div id="client_form">
   <div class="client-data">
       <div class="data">
+          <%= form.label :orgin_id, "Shipment Origin" %>
           <%= form.collection_select :origin_id, Airport.order(:city_code), :id, :city_code, include_blank: "Select Origin" %>
           <%= form.collection_select :destination_id, Airport.order(:city_code), :id, :city_code, include_blank: "Select Destination" %>
           <%= form.collection_select :airplane_id, Airplane.order(:plane_name), :id, :plane_name, include_blank: "Select Plane" %><br>
