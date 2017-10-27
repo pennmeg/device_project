@@ -9,7 +9,13 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    # @jobs = Job.all
+    @jobs = if [:client_email]
+      Job.where('client_email LIKE ?', "%#{params[:client_email]}%")
+    else
+      Job.all
+    end
+
   end
 
   # GET /jobs/1
@@ -31,19 +37,18 @@ class JobsController < ApplicationController
   def edit
   end
 
+  def check_status
+    puts "==== check_status ======"
 
-  # ======= new_airplane =======
-# def new_airplane
-#     puts "******* new_airplane *******"
-#     @users = User.all
-#     @jobs = Job.all
-#     @airports = Airport.all
-#     @airplanes = Airplane.new
-# end
+  end
 
 
-  # POST /jobs
-  # POST /jobs.json
+  def search
+    params.require(:job).permit(:client_email)
+
+  end
+
+
   def create
     puts "******* create *******"
     puts "params: #{params.inspect}"
