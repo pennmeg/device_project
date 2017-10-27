@@ -1,4 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+  <p>Origin:<%= @job[:origin_id] %></p>
+  <p>Destination:<%= @job[:destination_id] %></p>
+  <p>Order by:<%= @job[:client_name] %></p>
+  <p>Email:<%= @job[:client_email] %></p>
+  <p>Description:<%= @job[:description] %></p>
+  <p>Weight:<%= @job[:weight] %></p>
+  <p>Total Cost:<%= @job[:cost] %></p>
+
+  <%= link_to 'Edit', edit_job_path(@job) %> |
+  <%= link_to 'Back', jobs_path %>
