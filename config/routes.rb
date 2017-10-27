@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/check_status" => "jobs#check_status"
   post "/check_status" => "jobs#check_status"
   get "/search" => "jobs#index"
+  get "/est_cost/" => "jobs#est_cost"
 
   devise_for :users
   resources :users, :only => [:index, :show]
@@ -14,8 +15,7 @@ Rails.application.routes.draw do
   resources :airports
   resources :jobs
 
-  resources :airplanes do
-    resources :photos	# use this version if editing title, description, other db values
-  end
+  resources :airplanes
+  resources :photos	# use this version if editing title, description, other db values
 
 end
