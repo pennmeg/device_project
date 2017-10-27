@@ -18,6 +18,8 @@ class UsersController < ApplicationController
   def home
   	puts "/n******* home *******"
     puts "** current_user.inspect: #{current_user.inspect}"
+		@airports = Airport.all
+		@airplanes = Airplane.all
   end
 
   # GET /users
