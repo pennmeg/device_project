@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   resources :airports
   resources :jobs
 
-  resources :airplanes do
-    resources :photos	# use this version if editing title, description, other db values
-  end
+  resources :airplanes
+  resources :photos	# use this version if editing title, description, other db values
+
 
 end

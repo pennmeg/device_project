@@ -25,6 +25,11 @@
           <p>Description:</p> <div class="data-value"><%= form.text_field :description %></div>
           <p>Weight:</p> <div class="data-value"><%= form.text_field :weight %></div>
 
+          <p>Start:</p> <div class="data-value"><%= form.text_field :start_time, style: "width: 150px; height: 50px;", value: Time.now %></div>
+
+          <p>End:</p> <div class="data-value"><%= form.text_field :start_time, style: "width: 150px; height: 50px;", value: Time.now + 2.days %></div>
+
+
           <p>Cost:</p> <div class="data-value"><%= form.text_field :cost, value: "1" %></div>
       </div>
       <div class="data">

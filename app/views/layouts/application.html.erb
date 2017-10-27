@@ -9,21 +9,21 @@
   </head>
   <body>
     <!-- not logged in  -->
-    <ul>
+    <ul id="nav">
       <% if !current_user %>
-        <li><%= link_to "Home", home_path %></li>
-        <li><%= link_to "Sign up", new_user_registration_path %></li>
-        <li><%= link_to "Sign in", new_user_session_path %></li>
-        <li><%= link_to 'Create New Order', new_job_path %></li>
-        <li><%= link_to 'Check Status', check_status_path %></li>
+        <li class="navigation"><%= link_to "Home", home_path %></li>
+        <li class="navigation"><%= link_to "Sign up", new_user_registration_path %></li>
+        <li class="navigation"><%= link_to "Sign in", new_user_session_path %></li>
+        <li class="navigation"><%= link_to 'Create New Order', new_job_path %></li>
+        <li class="navigation"><%= link_to 'Check Status', check_status_path %></li>
       <% else %>
-        <li><%= link_to "Main Page", home_path %></li>
-        <li><%= link_to 'Create New Order', new_job_path %></li>
-        <li><%= link_to "All Orders", jobs_path %></li>
-        <li><%= link_to 'View/Create New Airport', airports_path %></li>
-        <li><%= link_to "View/Create New Airplane", airplanes_path %></li>
-        <li><%= link_to "All Employees", users_path %></li>
-        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+        <li class="navigation"><%= link_to "Main Page", home_path %></li>
+        <li class="navigation"><%= link_to 'Create New Order', new_job_path %></li>
+        <li class="navigation"><%= link_to "All Orders", jobs_path %></li>
+        <li class="navigation"><%= link_to 'View/Create New Airport', airports_path %></li>
+        <li class="navigation"><%= link_to "View/Create New Airplane", airplanes_path %></li>
+        <li class="navigation"><%= link_to "All Employees", users_path %></li>
+        <li class="navigation"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
         <div id="c_user_email">Currently Signed In: <%= current_user.email %></div>
 
       <% end %>
