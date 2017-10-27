@@ -10,11 +10,12 @@
     </div>
   <% end %>
   <div class="actions">
-    Plane Name: <%= form.text_field :plane_name %>
-    Plane Capacity: <%= form.number_field :capacity %>
-    Belongs to Photo <%= form.text_field :photo_id %>
-    Belongs to Airport <%= form.text_field :airport_id %>
-    <%= form.hidden_field :user_id, value: current_user[:id] %>
+    Name: <%= form.text_field :plane_name %><br>
+    Capacity: <%= form.number_field :capacity %> (in kgs)<br>
+    <%= form.collection_select :photo_id, Photo.order(:title), :id, :title, include_blank: "Select Plane" %><br>
+    <%= form.collection_select :airport_id, Airport.order(:city_code), :id, :city_code, include_blank: "Select Airport" %><br>
+    <%= form.hidden_field :user_id, value: current_user[:id] %><br>
     <%= form.submit "Submit" %>
   </div>
+
 <% end %>
