@@ -1,10 +1,15 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
-
+  def est_cost
+    puts "*** est_cost ***"
+    respond_to do |format|
+        format.js { render :est_cost }
+    end
+  end
 
   def check_status
-    @client = Client.new
+    puts "*** check_status ***"
   end
   # GET /jobs
   # GET /jobs.json
