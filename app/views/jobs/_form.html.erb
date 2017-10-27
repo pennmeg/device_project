@@ -14,17 +14,16 @@
 <div id="client_form">
   <div class="client-data">
       <div class="data">
-          <div class="data-label"><%= label(:client_name, "Make Your Order") %></div>
           <%= form.collection_select :origin_id, Airport.order(:city_code), :id, :city_code, include_blank: "Select Origin" %>
           <%= form.collection_select :destination_id, Airport.order(:city_code), :id, :city_code, include_blank: "Select Destination" %>
           <p>Your Full Name:</p> <div class="data-value"><%= form.text_field :client_name %></div>
           <p>Email:</p> <div class="data-value"><%= form.email_field :client_email %></div>
           <p>Description:</p> <div class="data-value"><%= form.text_field :description %></div>
           <p>Weight:</p> <div class="data-value"><%= form.number_field :weight, id: "orderWeight" %></div>
-         <%= link_to 'Estimate Cost', "/est_cost/", remote: true %>
+          <%= link_to 'Estimate Cost', "/est_cost/", remote: true %>
           <%= form.number_field :cost, id: "estimatedCost" %>
-
-      </div>
+          <p>Start:</p> <div class="data-value"><%= form.text_field :start_time, style: "width: 150px; height: 50px;", value: Time.now %></div>
+          <p>End:</p> <div class="data-value"><%= form.text_field :start_time, style: "width: 150px; height: 50px;", value: Time.now + 2.days %></div>
       <div class="data">
       </div>
   </div>
