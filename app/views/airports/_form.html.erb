@@ -10,7 +10,8 @@
     </div>
   <% end %>
   <div class="actions">
-    Airport Code: <%= form.text_field :city_code %>
+    <%= form.label :city_code, "Airport City Code: " %>
+    <%= form.text_field :city_code %>
     <%= form.submit "Submit" %>
   </div>
 <% end %>
