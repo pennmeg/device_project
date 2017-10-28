@@ -3,16 +3,18 @@
   Step 1: <%= link_to 'Upload a Airplane Photo', new_photo_path %> |
   Step 2: <%= link_to 'Add Airplane to Database', new_airplane_path %>
 <% end %>
+<br> <br>
 
 <% @airplanes.each do |airplane| %>
   <% photo = Photo.find(airplane[:photo_id]) %>
-  <div id="planeInfo">
-    <h3 class="planeText"><%= airplane[:plane_name] %></h3>
-    <p class="planeText"><%= airplane[:capacity] %> kgs </p>
-    <p class="planeText"><%= link_to 'Edit', edit_airplane_path(airplane) %></p>
+  <div class="planeInfo">
+    <h3 class="planeText"><%= airplane[:plane_name] %></h3> |
+    <p class="planeText">Capacity: <%= airplane[:capacity] %> kgs </p> |
+    <p class="planeText"><%= link_to 'Edit', edit_airplane_path(airplane) %></p> |
     <p class="planeText"><%= link_to 'Delete', airplane, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     <br>
     <%= link_to image_tag(photo.image.url, class: 'media-object'), photo.image.url, target: '_blank' %>
   </div>
+  <br>
 <% end %>
 <br>

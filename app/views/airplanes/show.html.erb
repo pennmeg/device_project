@@ -1,2 +1,11 @@
+<% photo = Photo.find(@airplane[:photo_id]) %>
+<div>
+  <h3><%= @airplane[:plane_name] %></h3> 
+  <p>Capacity: <%= @airplane[:capacity] %> kgs </p>
+  <br>
+  <%= link_to image_tag(photo.image.url, class: 'media-object'), photo.image.url, target: '_blank' %>
+</div>
+<br>
 <%= link_to 'Edit', edit_airplane_path(@airplane) %> |
+<%= link_to 'All Airplanes', airplanes_path %> |
 <%= link_to 'Back', airplanes_path %>
