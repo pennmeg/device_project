@@ -1,19 +1,17 @@
 <h2>Fly High with</h2>
 <h1>So Fly</h1>
-<!-- <img src="/images/plane.jpg" style="width: 300%" height="300px"> -->
-  <%= image_tag("homeplane.jpg", :alt => "rss feed", class: "homeimg") %>
+<%= image_tag("homeplane.jpg", :alt => "rss feed", class: "homeimg") %>
+
 <div id="hometxt">
   <p>Welcome to So Fly, voted #1 internatinal shipping comapany of the world!<br>
     With the best airplanes and staff,
     all deliveries are shipped within two days! <br>
       <%= link_to "View our planes", airplanes_path %> </p>
       <p>Cities we are currently flying to:</p>
-    <div id="wefly">
+    <!-- <div id="wefly"> -->
       <% @airports.each do |airport| %>
-      <ul>
-        <li><%= airport[:city_code] %></li>
-      </ul>
-      <% end %>
+      <!-- <ul> -->
+        <p><%= airport[:city_code] %></p>
+      <!-- </ul> -->
+      <!-- <% end %> -->
     </div>
-
-</div>
