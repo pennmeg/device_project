@@ -4,12 +4,12 @@
   <p>Questions about your order? Contact SO FLY at sofly@email.com or (202) 123-4567</p>
   <div id="receipt">
     <!-- Receipt number placeholder, would be awesome to find code to make a random number generator -->
-    <p id="recNum">Receipt Number: 00<%= @job[:id] %></p>
+    <p id="recNum">Receipt Number: #00<%= @job[:id] %></p>
     <p>Ordered by: <%= @job[:client_name] %></p>
     <p>Email: <%= @job[:client_email] %></p>
     <p>Item(s) to be Shipped: <%= @job[:description] %></p>
-    <p>Weight of Order: <%= @job[:weight] %></p>
-    <p>Total Cost: <%= @job[:cost] %></p>
+    <p>Weight of Order: <%= @job[:weight] %> kgs</p>
+    <p>Total Cost: $<%= @job[:cost] %></p>
     <p>Origin: <%= airportStart[:city_code] %></p>
     <p>Destination: <%= airportEnd[:city_code]  %></p>
     <p>Order Created At: <%= @job[:start_time] %></p>
