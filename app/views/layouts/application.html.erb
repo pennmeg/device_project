@@ -13,7 +13,7 @@
       <% if !current_user %>
         <li class="navigation"><%= link_to "Home", home_path %></li>
         <li class="navigation"><%= link_to "Sign up", new_user_registration_path %></li>
-        <li class="navigation"><%= link_to "Sign in", new_user_session_path %></li>
+        <li class="navigation"><%= link_to "Employee Sign in", new_user_session_path %></li>
         <li class="navigation"><%= link_to 'Create New Order', new_job_path %></li>
         <li class="navigation"><%= link_to 'Check Status', check_status_path %></li>
       <% else %>
@@ -25,15 +25,13 @@
         <li class="navigation"><%= link_to "All Employees", users_path %></li>
         <li class="navigation"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
         <div id="c_user_email">Currently Signed In: <%= current_user.email %></div>
-
       <% end %>
-  </ul>
-  <p class="notice"><%= notice %></p>
-
-
-
-    <div class="section>">
+    </ul>
+    <div class="section">
+      <p class="notice"><%= notice %></p>
       <%= yield %>
     </div>
+    <footer>
+    </footer>
   </body>
 </html>
