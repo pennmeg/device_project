@@ -1,20 +1,24 @@
-<h2>All Airports</h2>
-<table>
-  <thead>
-    <tr>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @airports.each do |airport| %>
-      <tr>
-        <td><%= airport[:city_code] %></td>
-        <td> </td>
-        <td><%= link_to 'Edit', edit_airport_path(airport) %></td>
-        <td><%= link_to 'Delete', airport_path(airport), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+<h2>All Airports Partnering with On Fly</h2>
 <%= link_to 'Add an Airport', new_airport_path %>
+<br> <br>
+<div class="tableDiv">
+  <table>
+    <thead>
+      <tr>
+        <th>Airport Code</th>
+        <th>Edit Airport</th>
+        <th>Delete Airport</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @airports.each do |airport| %>
+        <tr>
+          <td><%= airport[:city_code] %></td>
+          <td><%= link_to 'Edit', edit_airport_path(airport) %></td>
+          <td><%= link_to 'Delete', airport_path(airport), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
