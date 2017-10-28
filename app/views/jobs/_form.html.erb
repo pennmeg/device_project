@@ -14,11 +14,12 @@
 <div id="client_form">
   <div class="client-data">
       <div class="data">
+          <%= form.label :orgin_id, "Shipment Origin" %>
           <%= form.collection_select :origin_id, Airport.order(:city_code), :id, :city_code, include_blank: "Select Origin" %>
           <%= form.collection_select :destination_id, Airport.order(:city_code), :id, :city_code, include_blank: "Select Destination" %>
           <%= form.collection_select :airplane_id, Airplane.order(:plane_name), :id, :plane_name, include_blank: "Select Plane" %><br>
           <p>Your Full Name:</p> <div class="data-value"><%= form.text_field :client_name %></div>
-          <p>Email:</p> <div class="data-value"><%= form.email_field :client_email %></div>
+          <p>Email:</p> <div class="data"><%= form.email_field :client_email %></div>
           <p>Description:</p> <div class="data-value"><%= form.text_field :description %></div>
           <p>Weight:</p> <div class="data-value"><%= form.number_field :weight, id: "orderWeight" %></div>
           <%= link_to 'Estimate Cost', "/est_cost/", remote: true %>
@@ -28,7 +29,7 @@
       <div class="data">
       </div>
   </div>
-  <%= form.submit %>
+  <%= form.submit "Submit" %>
 </div>
 
 <% end %>
