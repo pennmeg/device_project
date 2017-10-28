@@ -1,4 +1,4 @@
-<h1>Current Order(s)</h1>
+<h2>Current Order(s)</h2>
 <%= link_to 'Create New Order', new_job_path %>
 <br> <br>
 <table>
@@ -41,4 +41,7 @@
     <% end %>
   </tbody>
 </table>
+<% if !current_user %>
+  <p>Questions about your order? Contact SO FLY at sofly@email.com or (202) 123-4567</p>
+<% end %>
 <br>
