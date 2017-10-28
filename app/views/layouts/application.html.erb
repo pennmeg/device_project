@@ -13,7 +13,7 @@
       <% if !current_user %>
         <li class="navigation"><%= link_to "Home", home_path %></li>
         <li class="navigation"><%= link_to "Sign up", new_user_registration_path %></li>
-        <li class="navigation"><%= link_to "Sign in", new_user_session_path %></li>
+        <li class="navigation"><%= link_to "Employee Sign in", new_user_session_path %></li>
         <li class="navigation"><%= link_to 'Create New Order', new_job_path %></li>
         <li class="navigation"><%= link_to 'Check Status', check_status_path %></li>
       <% else %>
