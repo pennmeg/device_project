@@ -24,7 +24,7 @@
           <%= link_to 'Estimate Cost', "/est_cost/", remote: true %>
           <%= form.number_field :cost, id: "estimatedCost" %>
           <p>Start:</p> <div class="data-value"><%= form.text_field :start_time, style: "width: 150px; height: 50px;", value: Time.now %></div>
-          <p>End:</p> <div class="data-value"><%= form.text_field :start_time, style: "width: 150px; height: 50px;", value: Time.now + 2.days %></div>
+          <p>End:</p> <div class="data-value"><%= form.text_field :end_time, style: "width: 150px; height: 50px;", value: Time.now + 2.days %></div>
       <div class="data">
       </div>
   </div>
