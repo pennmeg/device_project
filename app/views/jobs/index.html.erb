@@ -1,40 +1,49 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Jobs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jobs.each do |job| %>
+<h2>Current Order(s)</h2>
+<%= link_to 'Create New Order', new_job_path %>
+<br> <br>
+<div class="tableDiv">
+  <table>
+    <thead>
       <tr>
-        <div class="jobsbox">
-          <p><%= job[:client_email] %>
-          <% airportStart = Airport.find(job[:origin_id]) %>
-          <% airportEnd = Airport.find(job[:destination_id]) %>
-          <p>Origin:<%= airportStart[:city_code] %></p>
-          <p>Destination:<%= airportEnd[:city_code]  %></p>
-          <p>Order by:</p><%= job[:client_name] %>
-          <p>Email:</p><%= job[:client_email] %>
-          <p>Description:</p><%= job[:description] %>
-          <p>Weight:</p><%= job[:weight] %>
-          <p>Total Cost:</p><%= job[:cost] %>
-
-        <% if current_user %>
-          <td><%= link_to 'Edit', edit_job_path(job) %></td>
-          <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </div>
-
+        <th>Order No.</th>
+        <th>Client Name</th>
+        <th>Email</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Item Description</th>
+        <th>Weight (kgs)</th>
+        <th>Total Cost ($)</th>
+        <th>Created</th>
+        <th>Delivery Date</th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <% airportStart = Airport.find(job[:origin_id]) %>
+        <% airportEnd = Airport.find(job[:destination_id]) %>
+        <tr>
+          <td>00<%= job[:id] %></td>
+          <td><%= job[:client_name] %></td>
+          <td><%= job[:client_email] %></td>
+          <td><%= airportStart[:city_code] %></td>
+          <td><%= airportEnd[:city_code] %></td>
+          <td><%= job[:description] %></td>
+          <td><%= job[:weight] %></td>
+          <td><%= job[:cost] %></td>
+          <td><%= job[:start_time] %></td>
+          <td><%= job[:end_time] %></td>
+          <% if current_user %>
+            <td><%= link_to 'Edit', edit_job_path(job) %></td>
+            <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<% if !current_user %>
+  <p>Questions about your order? Contact SO FLY at sofly@email.com or (202) 123-4567</p>
+<% end %>
 <br>
-
-<%= link_to 'New Job', new_job_path %>

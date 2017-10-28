@@ -1,7 +1,17 @@
+<<<<<<< HEAD
 body {
   background: #acb6e5;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+=======
+/* general body styling */
+body {
+  box-sizing: border-box;
+}
+.section {
+  text-align: center;
+  margin: 50px;
+>>>>>>> de677af59a1f2278c6493ecc80060fad527f463d
 }
 h1 {
   text-align: center;
@@ -13,30 +23,27 @@ h2 {
   font-family: 'Permanent Marker', cursive;
   font-size: 25px;
 }
+/* navigation bar */
 #nav {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #333;
-  }
-
-  .navigation {
-      float: left;
-  }
-
-  .navigation a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-  }
-
-  /* Change the link color to #111 (black) on hover */
-  .navigation a:hover {
-      background-color: #111;
-  }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.navigation {
+  float: left;
+}
+.navigation a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navigation a:hover {
+  background-color: #111; /* Change the link color to #111 (black) on hover */
+}
 #c_user_email {
   color: white;
   background-color: #333;
@@ -45,12 +52,37 @@ h2 {
   height: 30px;
   font-size: 20px;
 }
-.jobsbox {
-  border-style: solid;
-   border-color: #333;
-   text-align: center;
-   width: 200px;
-   margin-left: 43%;
+/* jobs#show */
+#receipt {
+  margin: 0px 150px;
+  padding: 2px;
+  background-color: #eee;
+}
+#recNum {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+/* index tables on all pages general */
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+table, th, td {
+  border: 1px solid black;
+}
+th {
+  background-color: #eee;
+}
+th, td {
+  padding: 3px;
+}
+/* airplanes#index */
+.planeText {
+  display: inline-block;
+}
+.planeInfo {
+  background-color: #eee;
+  padding-bottom: 20px;
 }
 .homeimg {
   width: 700px;
