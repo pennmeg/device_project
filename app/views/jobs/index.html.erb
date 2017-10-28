@@ -1,46 +1,48 @@
 <h2>Current Order(s)</h2>
 <%= link_to 'Create New Order', new_job_path %>
 <br> <br>
-<table>
-  <thead>
-    <tr>
-      <th>Order No.</th>
-      <th>Client Name</th>
-      <th>Email</th>
-      <th>Origin</th>
-      <th>Destination</th>
-      <th>Item Description</th>
-      <th>Weight (kgs)</th>
-      <th>Total Cost ($)</th>
-      <th>Created</th>
-      <th>Delivery Date</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @jobs.each do |job| %>
-      <% airportStart = Airport.find(job[:origin_id]) %>
-      <% airportEnd = Airport.find(job[:destination_id]) %>
-      <tr class="jobsBox">
-        <td>00<%= job[:id] %></td>
-        <td><%= job[:client_name] %></td>
-        <td><%= job[:client_email] %></td>
-        <td><%= airportStart[:city_code] %></td>
-        <td><%= airportEnd[:city_code] %></td>
-        <td><%= job[:description] %></td>
-        <td><%= job[:weight] %></td>
-        <td><%= job[:cost] %></td>
-        <td><%= job[:start_time] %></td>
-        <td><%= job[:end_time] %></td>
-        <% if current_user %>
-          <td><%= link_to 'Edit', edit_job_path(job) %></td>
-          <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+<div class="tableDiv">
+  <table>
+    <thead>
+      <tr>
+        <th>Order No.</th>
+        <th>Client Name</th>
+        <th>Email</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Item Description</th>
+        <th>Weight (kgs)</th>
+        <th>Total Cost ($)</th>
+        <th>Created</th>
+        <th>Delivery Date</th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <% airportStart = Airport.find(job[:origin_id]) %>
+        <% airportEnd = Airport.find(job[:destination_id]) %>
+        <tr class="jobsBox">
+          <td>00<%= job[:id] %></td>
+          <td><%= job[:client_name] %></td>
+          <td><%= job[:client_email] %></td>
+          <td><%= airportStart[:city_code] %></td>
+          <td><%= airportEnd[:city_code] %></td>
+          <td><%= job[:description] %></td>
+          <td><%= job[:weight] %></td>
+          <td><%= job[:cost] %></td>
+          <td><%= job[:start_time] %></td>
+          <td><%= job[:end_time] %></td>
+          <% if current_user %>
+            <td><%= link_to 'Edit', edit_job_path(job) %></td>
+            <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <% if !current_user %>
   <p>Questions about your order? Contact SO FLY at sofly@email.com or (202) 123-4567</p>
 <% end %>
