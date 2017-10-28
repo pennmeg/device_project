@@ -4,7 +4,7 @@
   <p>Questions about your order? Contact SO FLY at sofly@email.com or (202) 123-4567</p>
   <div id="receipt">
     <!-- Receipt number placeholder, would be awesome to find code to make a random number generator -->
-    <p id="recNum">Receipt Number: #1BCEF560</p>
+    <p id="recNum">Receipt Number: 00<%= @job[:id] %></p>
     <p>Ordered by: <%= @job[:client_name] %></p>
     <p>Email: <%= @job[:client_email] %></p>
     <p>Item(s) to be Shipped: <%= @job[:description] %></p>
