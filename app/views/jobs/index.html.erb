@@ -23,7 +23,7 @@
       <% @jobs.each do |job| %>
         <% airportStart = Airport.find(job[:origin_id]) %>
         <% airportEnd = Airport.find(job[:destination_id]) %>
-        <tr class="jobsBox">
+        <tr>
           <td>00<%= job[:id] %></td>
           <td><%= job[:client_name] %></td>
           <td><%= job[:client_email] %></td>

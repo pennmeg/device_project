@@ -1,33 +1,35 @@
+/* general body styling */
 body {
   box-sizing: border-box;
+}
+.section {
+  text-align: center;
+  margin: 50px;
 }
 h1 {
   text-align: center;
 }
+/* navigation bar */
 #nav {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #333;
-  }
-
-  .navigation {
-      float: left;
-  }
-
-  .navigation a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-  }
-
-  /* Change the link color to #111 (black) on hover */
-  .navigation a:hover {
-      background-color: #111;
-  }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.navigation {
+  float: left;
+}
+.navigation a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navigation a:hover {
+  background-color: #111; /* Change the link color to #111 (black) on hover */
+}
 #c_user_email {
   color: white;
   background-color: #333;
@@ -36,17 +38,7 @@ h1 {
   height: 30px;
   font-size: 25px;
 }
-.jobsbox {
-  border-style: solid;
-   border-color: #333;
-   text-align: center;
-   width: 200px;
-   margin-left: 43%;
-}
-.section {
-  text-align: center;
-  margin: 50px;
-}
+/* jobs#show */
 #receipt {
   margin: 0px 150px;
   padding: 2px;
@@ -56,6 +48,7 @@ h1 {
   text-transform: uppercase;
   font-weight: bold;
 }
+/* index tables on all pages general */
 table {
   border-collapse: collapse;
   margin: 0 auto;
@@ -68,4 +61,12 @@ th {
 }
 th, td {
   padding: 3px;
+}
+/* airplanes#index */
+.planeText {
+  display: inline-block;
+}
+.planeInfo {
+  background-color: #eee;
+  padding-bottom: 20px;
 }
