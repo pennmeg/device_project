@@ -1,13 +1,22 @@
-<p id="notice"><%= notice %></p>
   <% airportStart = Airport.find(@job[:origin_id]) %>
   <% airportEnd = Airport.find(@job[:destination_id]) %>
-  <p>Origin:<%= airportStart[:city_code] %></p>
-  <p>Destination:<%= airportEnd[:city_code]  %></p>
-  <p>Order by:<%= @job[:client_name] %></p>
-  <p>Email:<%= @job[:client_email] %></p>
-  <p>Description:<%= @job[:description] %></p>
-  <p>Weight:<%= @job[:weight] %></p>
-  <p>Total Cost:<%= @job[:cost] %></p>
+  <h2>Thank you for your order!</h2>
+  <p>Questions about your order? Contact SO FLY at sofly@email.com or (202) 123-4567</p>
+  <div id="receipt">
+    <!-- Receipt number placeholder, would be awesome to find code to make a random number generator -->
+    <p id="recNum">Receipt Number: #1BCEF560</p>
+    <p>Ordered by: <%= @job[:client_name] %></p>
+    <p>Email: <%= @job[:client_email] %></p>
+    <p>Item(s) to be Shipped: <%= @job[:description] %></p>
+    <p>Weight of Order: <%= @job[:weight] %></p>
+    <p>Total Cost: <%= @job[:cost] %></p>
+    <p>Origin: <%= airportStart[:city_code] %></p>
+    <p>Destination: <%= airportEnd[:city_code]  %></p>
+    <p>Order Created At: <%= @job[:start_time] %></p>
+    <p>Order Will Be Delivered By: <%= @job[:end_time] %></p>
+  </div>
+  <br>
+  <%= link_to 'Create New Order', new_job_path(@job) %>
   <% if current_user %>
-    <%= link_to 'Edit', edit_job_path(@job) %>
+    | <%= link_to 'Edit', edit_job_path(@job) %>
   <% end %>
