@@ -1,4 +1,8 @@
-/* general body styling */
+body {
+  background: #acb6e5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}/* general body styling */
 body {
   box-sizing: border-box;
 }
@@ -8,6 +12,13 @@ body {
 }
 h1 {
   text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 50px;
+}
+h2 {
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 25px;
 }
 /* navigation bar */
 #nav {
@@ -36,7 +47,7 @@ h1 {
   text-align: center;
   margin-top: 10px;
   height: 30px;
-  font-size: 25px;
+  font-size: 20px;
 }
 /* jobs#show */
 #receipt {
@@ -69,4 +80,35 @@ th, td {
 .planeInfo {
   background-color: #eee;
   padding-bottom: 20px;
+}
+#homep {
+  width: 1px;
+  margin-right: 800px;
+  margin-top: 0;
+  float: left;
+}
+#hometxt {
+ text-align: center;
+ width: 800px;
+ font-size: 20px;
+ font-family: 'Permanent Marker', cursive;
+ margin-left: 40%;
+ margin-top: 70px;
+}
+.form {
+  border: 1px solid black;
+  height: 450px;
+  width: 500px;
+  margin-left: 31%;
+  text-align: center;
+}
+#footer {
+  // background-color: #333;
+  position:absolute;
+  top:140%;
+  bottom:0;
+  width:95%;
+  font-size: 12px;
+  border: 1px solid black;
+
 }

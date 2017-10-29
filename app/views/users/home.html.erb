@@ -1,9 +1,18 @@
-<h1> Welcome to!! </h1>
-Cities we are currently flying to:
-<% @airports.each do |airport| %>
-  <ul>
-    <li><%= airport[:city_code] %></li>
-  </ul>
-<% end %>
+<!-- <h2>Fly High with</h2> -->
+<h1>So Fly</h1>
+<h2>A world leading shipping company offering global service
+with local knowledge!</h2>
 
-<%= link_to "View our planes", airplanes_path %>
+<div id="homep">
+  <%= image_tag("homeplane.jpg", :alt => "rss feed", class: "homeimg") %>
+</div>
+<div id="hometxt">
+  <p>Cities we are currently flying to:</p>
+<!-- <div id="wefly"> -->
+  <% @airports.each do |airport| %>
+  <!-- <ul> -->
+    <p><%= airport[:city_code] %></p>
+  <!-- </ul> -->
+  <!-- <% end %> -->
+  <%= link_to "View our planes", airplanes_path %>
+</div>

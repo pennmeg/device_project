@@ -11,36 +11,36 @@
   <% end %>
 <div class="form">
   <div id="client_form">
-    <%= form.label :client_name, "Your Full Name:" %>
+    <%= form.label :client_name, "Your Full Name:" %><br>
     <%= form.text_field :client_name %>
     <br>
-    <%= form.label :client_email, "Your Email:" %>
+    <%= form.label :client_email, "Your Email:" %><br>
     <%= form.email_field :client_email %>
     <br>
-    <%= form.label :description, "Description of Items:" %>
+    <%= form.label :description, "Description of Items:" %><br>
     <%= form.text_field :description %>
     <br>
-    <%= form.label :orgin_id, "Shipment Origin:" %>
+    <%= form.label :orgin_id, "Shipment Origin:" %><br>
     <%= form.collection_select :origin_id, Airport.order(:city_code), :id, :city_code, include_blank: "Select Origin" %>
     <br>
-    <%= form.label :destination_id, "Shipment Destination:" %>
+    <%= form.label :destination_id, "Shipment Destination:" %><br>
     <%= form.collection_select :destination_id, Airport.order(:city_code), :id, :city_code, include_blank: "Select Destination" %>
     <br>
-    <%= form.label :airplane_id, "Airplane:" %>
+    <%= form.label :airplane_id, "Airplane:" %><br>
     <%= form.collection_select :airplane_id, Airplane.order(:plane_name), :id, :plane_name, include_blank: "Select Plane" %>
     <br>
-    <%= form.label :weight, "Weight of Items:" %>
+    <%= form.label :weight, "Weight of Items:" %><br>
     <%= form.number_field :weight, id: "orderWeight" %>
     <span>(kgs)</span>
     <br>
-    <%= form.label :cost, "Total Cost: $ " %>
-    <%= form.number_field :cost, id: "estimatedCost" %>
+    <%= form.label :cost, "Total Cost: $ " %><br>
     <%= link_to 'Click here for Estimated Cost', "/est_cost/", remote: true %>
+    <%= form.number_field :cost, id: "estimatedCost" %>
     <br>
-    <%= form.label :start_time, "Order Received:" %>
+    <%= form.label :start_time, "Order Received:" %><br>
     <%= form.text_field :start_time, style: "width: 150px; height: 15px;", value: Time.now %>
     <br>
-    <%= form.label :end_time, "Order Delivered:" %>
+    <%= form.label :end_time, "Order Delivered:" %><br>
     <%= form.text_field :end_time, style: "width: 150px; height: 15px;", value: Time.now + 2.days %>
   </div>
   <br>

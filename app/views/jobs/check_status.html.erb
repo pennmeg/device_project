@@ -1,6 +1,6 @@
-<h2>Check Status of Your Order</h2>
+<h2>Check Your Order Status</h2>
 <%= form_tag(jobs_path, method: :get) do %>
-  <%= label_tag("Search for:") %>
+  <%= label_tag("Enter email:") %>
   <%= text_field_tag(:client_email) %>
   <%= submit_tag("Search") %>
 <% end %>

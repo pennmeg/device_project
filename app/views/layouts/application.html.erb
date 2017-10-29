@@ -3,7 +3,7 @@
   <head>
     <title>DeviceProject</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -31,7 +31,8 @@
       <p class="notice"><%= notice %></p>
       <%= yield %>
     </div>
-    <footer>
-    </footer>
+ 	<div id="footer" class="section">
+    <p> Ⓒ 2017 So Fly</p>
+  </div>
   </body>
 </html>
