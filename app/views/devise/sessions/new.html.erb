@@ -22,5 +22,7 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
+<br>
+<%= link_to 'Create New Employee Account', new_user_registration_path, class: "button_link_to" %>
+<br><br>
 <%= render "devise/shared/links" %>

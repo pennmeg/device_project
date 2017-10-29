@@ -117,11 +117,12 @@ th, td {
   margin-top: 0;
   float: left;
 }
-#hometxt {
- text-align: center;
+.hometxt {
+  font-size: 20px;
+  font-family: 'Permanent Marker', cursive;
+}
+#airtxt {
  width: 600px;
- font-size: 20px;
- font-family: 'Permanent Marker', cursive;
  margin-left: 40%;
  margin-top: 70px;
 }
