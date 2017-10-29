@@ -7,12 +7,12 @@ with local knowledge!</h2>
   <%= image_tag("homeplane.jpg", :alt => "rss feed", class: "homeimg") %>
 </div>
 <div id="hometxt">
-  <p>Cities we are currently flying to:</p>
+  <p>Airports we are currently flying to:</p>
 <!-- <div id="wefly"> -->
   <% @airports.each do |airport| %>
   <!-- <ul> -->
     <p><%= airport[:city_code] %></p>
   <!-- </ul> -->
-  <!-- <% end %> -->
-  <%= link_to "View our planes", airplanes_path %>
+  <% end %>
+  <%= link_to "View our planes", airplanes_path, id: "home_airplanes" %>
 </div>

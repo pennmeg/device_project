@@ -33,9 +33,10 @@
     <%= form.number_field :weight, id: "orderWeight" %>
     <span>(kgs)</span>
     <br>
-    <%= form.label :cost, "Total Cost: $ " %><br>
+    <%= form.label :cost, "Total Cost:" %><br>
+    <span>$</span> <%= form.number_field :cost, id: "estimatedCost" %>
+    <br>
     <%= link_to 'Click here for Estimated Cost', "/est_cost/", remote: true %>
-    <%= form.number_field :cost, id: "estimatedCost" %>
     <br>
     <%= form.label :start_time, "Order Received:" %><br>
     <%= form.text_field :start_time, style: "width: 150px; height: 15px;", value: Time.now %>
