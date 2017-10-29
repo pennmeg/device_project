@@ -81,19 +81,19 @@ th, td {
   background-color: #eee;
   padding-bottom: 20px;
 }
-.homeimg {
-  width: 500px;
+#homep {
+  width: 1px;
   margin-right: 800px;
-  margin-top: 10px;
+  margin-top: 0;
   float: left;
 }
 #hometxt {
  text-align: center;
- width: 700px;
+ width: 800px;
  font-size: 20px;
  font-family: 'Permanent Marker', cursive;
- margin-left: 50%;
- margin-top: 10px;
+ margin-left: 40%;
+ margin-top: 70px;
 }
 .form {
   border: 1px solid black;
@@ -101,4 +101,14 @@ th, td {
   width: 500px;
   margin-left: 31%;
   text-align: center;
+}
+#footer {
+  // background-color: #333;
+  position:absolute;
+  top:140%;
+  bottom:0;
+  width:95%;
+  font-size: 12px;
+  border: 1px solid black;
+
 }
