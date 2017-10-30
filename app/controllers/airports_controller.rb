@@ -25,6 +25,13 @@ class AirportsController < ApplicationController
     puts "*** airport edit ***"
   end
 
+  def top_page
+    puts "*** top of page ***"
+    respond_to do |format|
+        format.js { render :top_page }
+    end
+  end
+
   # POST /airports
   # POST /airports.json
   def create

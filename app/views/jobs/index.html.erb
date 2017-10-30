@@ -1,5 +1,5 @@
 <h2>Current Order(s)</h2>
-<%= link_to 'Create New Order', new_job_path %>
+<%= link_to 'Create New Order', new_job_path, class: "button_link_to" %>
 <br> <br>
 <div class="tableDiv">
   <table>
@@ -35,8 +35,8 @@
           <td><%= job[:start_time] %></td>
           <td><%= job[:end_time] %></td>
           <% if current_user %>
-            <td><%= link_to 'Edit', edit_job_path(job) %></td>
-            <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_job_path(job), class: "link_to" %></td>
+            <td><%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, class: "link_to" %></td>
           <% end %>
         </tr>
       <% end %>

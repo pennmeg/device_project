@@ -1,6 +1,4 @@
 <h2>All Employees</h2>
-<%= link_to 'Create New Employee Account', new_user_registration_path %>
-<br> <br>
 <div class="tableDiv">
   <table>
     <thead>
@@ -29,8 +27,8 @@
           <td><%= user[:updated_at] %></td>
           <td><%= user[:last_sign_in_at] %></td>
           <% if current_user[:id] == user[:id]%>
-            <td><%= link_to 'Edit', edit_user_registration_path %></td>
-            <td><%= link_to 'Destroy', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_user_registration_path, class: "link_to" %></td>
+            <td><%= link_to 'Destroy', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "link_to" %></td>
           <% else %>
           <td></td>
           <td></td>

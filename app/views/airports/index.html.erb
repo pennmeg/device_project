@@ -1,5 +1,5 @@
 <h2>All Airports Partnering with On Fly</h2>
-<%= link_to 'Add an Airport', new_airport_path %>
+<%= link_to 'Add an Airport', new_airport_path, class: "button_link_to" %>
 <br> <br>
 <div class="tableDiv">
   <table>
@@ -14,8 +14,8 @@
       <% @airports.each do |airport| %>
         <tr>
           <td><%= airport[:city_code] %></td>
-          <td><%= link_to 'Edit', edit_airport_path(airport) %></td>
-          <td><%= link_to 'Delete', airport_path(airport), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Edit', edit_airport_path(airport), class: "link_to" %></td>
+          <td><%= link_to 'Delete', airport_path(airport), method: :delete, data: { confirm: 'Are you sure?' }, class: "link_to" %></td>
         </tr>
       <% end %>
     </tbody>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post "/check_status" => "jobs#check_status"
   get "/search" => "jobs#index"
   get "/est_cost/" => "jobs#est_cost"
+  get "/top_page/" => "airplanes#top_page"
 
   devise_for :users
   resources :users, :only => [:index, :show]

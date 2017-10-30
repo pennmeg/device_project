@@ -12,7 +12,6 @@
     <ul id="nav">
       <% if !current_user %>
         <li class="navigation"><%= link_to "Home", home_path %></li>
-        <li class="navigation"><%= link_to "Sign up", new_user_registration_path %></li>
         <li class="navigation"><%= link_to "Employee Sign in", new_user_session_path %></li>
         <li class="navigation"><%= link_to 'Create New Order', new_job_path %></li>
         <li class="navigation"><%= link_to 'Check Status', check_status_path %></li>
@@ -31,8 +30,11 @@
       <p class="notice"><%= notice %></p>
       <%= yield %>
     </div>
- 	<div id="footer" class="section">
-    <p> Ⓒ 2017 So Fly</p>
-  </div>
+ 	<footer class="section">
+    <hr>
+    <p>Questions about your order? Contact SO FLY at sofly@email.com or (202) 123-4567</p>
+    <p> &copy; 2017 So Fly</p>
+    <!-- HTML usually doesn't recognize symbols like a copyright sign, so there is special syntax to use -->
+  </footer>
   </body>
 </html>
